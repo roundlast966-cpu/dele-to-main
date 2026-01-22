@@ -5,6 +5,7 @@ import { Footer } from '@/components/footer'
 import { ThemeProvider } from '@/components/theme-provider'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { ConsoleMessage } from '@/components/console-message'
+import { Header } from '@/components/header'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -63,7 +64,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ConsoleMessage />
-          <main className="flex-1">{children}</main>
+          <Header />
+          <main className="flex-1">
+            <div className="container mx-auto w-full flex-1 px-4 py-10">{children}</div>
+          </main>
           <Footer />
         </ThemeProvider>
       </body>

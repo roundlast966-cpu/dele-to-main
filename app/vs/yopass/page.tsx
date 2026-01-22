@@ -86,24 +86,23 @@ const comparisonData = [
 
 export default function YopassComparison() {
   return (
-    <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-8">
-        <div className="mb-6">
-          <Link href="/">
-            <Button variant="ghost">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </Button>
-          </Link>
-        </div>
+    <div>
+      <div className="mb-6">
+        <Link href="/">
+          <Button variant="ghost">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Home
+          </Button>
+        </Link>
+      </div>
 
-        <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h1 className="text-4xl font-bold text-foreground mb-4">
               DELE.TO - Alternative to Yopass
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Comparing two popular secure password sharing solutions. Both offer client-side encryption, 
               but which one is right for your needs?
             </p>
@@ -114,7 +113,7 @@ export default function YopassComparison() {
             <Card>
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 rounded-full" style={{ backgroundColor: '#D2461E' }}>
+                  <div className="p-2 rounded-full bg-primary">
                     <Flame className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -126,16 +125,16 @@ export default function YopassComparison() {
               <CardContent>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
-                    <Badge style={{ backgroundColor: '#D2461E' }} className="text-white">Modern UI</Badge>
+                    <Badge>Modern UI</Badge>
                     <Badge variant="outline">Password Protection</Badge>
                   </div>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-muted-foreground">
                     Built with Next.js 14, featuring a polished interface, optional password protection, 
                     and mobile-first design. Perfect for teams and individuals who value user experience.
                   </p>
                   <div className="pt-2">
                     <Link href="/create">
-                      <Button style={{ backgroundColor: '#D2461E' }} className="text-white hover:opacity-90">
+                      <Button>
                         Try DELE.TO
                       </Button>
                     </Link>
@@ -162,7 +161,7 @@ export default function YopassComparison() {
                     <Badge className="bg-blue-600">File Sharing</Badge>
                     <Badge variant="outline">Established</Badge>
                   </div>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-muted-foreground">
                     A mature solution with file sharing capabilities and proven track record. 
                     Great for users who need to share files along with passwords.
                   </p>
@@ -199,7 +198,7 @@ export default function YopassComparison() {
                   </thead>
                   <tbody>
                     {comparisonData.map((item, index) => (
-                      <tr key={index} className="border-b hover:bg-gray-50 dark:hover:bg-gray-800">
+                      <tr key={index} className="border-b hover:bg-muted/40">
                         <td className="py-3 px-4 font-medium">{item.feature}</td>
                         <td className="py-3 px-4 text-center">
                           {item.deleto === true ? (
@@ -221,7 +220,7 @@ export default function YopassComparison() {
                             <span className="text-sm text-yellow-600">{item.yopass}</span>
                           )}
                         </td>
-                        <td className="py-3 px-4 text-sm text-gray-600">{item.details}</td>
+                        <td className="py-3 px-4 text-sm text-muted-foreground">{item.details}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -328,19 +327,19 @@ export default function YopassComparison() {
           </Card>
 
           {/* Final Recommendation */}
-          <Card>
+          <Card className="mb-12">
             <CardHeader>
               <CardTitle>Our Recommendation</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <p className="text-gray-600">
+                <p className="text-muted-foreground">
                   Both DELE.TO and Yopass are excellent choices for secure password sharing. Your choice depends on your specific needs:
                 </p>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="p-4 rounded-lg" style={{ backgroundColor: '#FDF2F2', borderColor: '#D2461E', borderWidth: '1px' }}>
-                    <h4 className="font-semibold mb-2" style={{ color: '#8B1A00' }}>For Modern Teams</h4>
-                    <p className="text-sm" style={{ color: '#B91C1C' }}>
+                  <div className="p-4 rounded-lg bg-primary/10 border border-primary/20">
+                    <h4 className="font-semibold mb-2 text-primary">For Modern Teams</h4>
+                    <p className="text-sm text-muted-foreground">
                       Choose DELE.TO for its polished interface, mobile optimization, and additional security features like password protection.
                     </p>
                   </div>
@@ -357,13 +356,10 @@ export default function YopassComparison() {
 
           <div className="text-center mt-12">
             <Link href="/create">
-              <Button size="lg" style={{ backgroundColor: '#D2461E' }} className="text-white hover:opacity-90">
-                Try DELE.TO Now
-              </Button>
+              <Button size="lg">Try DELE.TO Now</Button>
             </Link>
           </div>
         </div>
-      </div>
     </div>
   )
 }

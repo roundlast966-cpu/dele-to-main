@@ -5,30 +5,35 @@ import Link from 'next/link'
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center max-w-4xl mx-auto">
+    <div className="overflow-x-hidden">
+      <section className="relative">
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background to-background" />
+          <div className="absolute left-1/2 top-[-240px] h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
+        </div>
+
+        <div className="text-center max-w-4xl mx-auto py-10 sm:py-14">
           <Link href="https://github.com/ardd/dele-to-deployed" target="_blank" rel="noopener noreferrer">
-            <span className="inline-flex items-center rounded-full bg-red-100 dark:bg-red-900/30 px-3 py-1 text-xs font-medium text-red-800 dark:text-red-300 ring-1 ring-inset ring-red-200 dark:ring-red-800 mb-6 hover:bg-red-200 dark:hover:bg-red-900/40 transition-colors">
+            <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 mb-6 hover:bg-primary/15 transition-colors">
               <Sparkles className="h-3 w-3 mr-1" /> Open source & zero-knowledge
             </span>
           </Link>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
             Share secrets
             <br />
-            that <span className="text-red-600 dark:text-red-500 animate-disappear">disappear</span>
+            that <span className="text-primary">disappear</span>
           </h1>
           <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto hidden md:block">
             Stop sharing passwords in Slack. DELE.TO encrypts everything in your browser.
             <br />Your secrets self-destruct after reading. No traces, no logs, no worries.
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 mb-12">
-            <Button asChild className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 text-lg rounded-lg transition-all duration-300 transform hover:scale-90w-auto">
+            <Button asChild size="lg" className="px-6">
               <Link href="/create">
                 Create a secret <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button asChild variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800 px-6 py-3 text-lg rounded-lg transition-all duration-300 transform hover:scale-90w-auto">
+            <Button asChild variant="outline" size="lg" className="px-6">
               <Link href="/about">
                 Learn more
               </Link>
@@ -44,15 +49,11 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Security without compromise section */}
-        <div className="w-full max-w-6xl mx-auto mt-24 px-4 sm:px-6 lg:px-8 pb-16">
-          {/* <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Security without compromise</h2>
-          </div> */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 overflow-x-hidden">
-          <Card className="bg-card border-border transition-all duration-300 hover:shadow-lg hover:scale-90hover:border-2 hover:border-red-500 dark:hover:border-red-400">
+        <div className="w-full max-w-6xl mx-auto mt-14 pb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <Card className="bg-card border-border transition-shadow hover:shadow-md">
             <CardHeader>
-              <Shield className="w-8 h-8 mb-2 text-white" />
+              <Shield className="w-8 h-8 mb-2 text-primary" />
               <CardTitle className="text-lg">Military-grade encryption</CardTitle>
             </CardHeader>
             <CardContent>
@@ -62,9 +63,9 @@ export default function HomePage() {
             </CardContent>
           </Card>
 
-          <Card className="bg-card border-border transition-all duration-300 hover:shadow-lg hover:scale-90hover:border-2 hover:border-red-500 dark:hover:border-red-400">
+          <Card className="bg-card border-border transition-shadow hover:shadow-md">
             <CardHeader>
-              <Clock className="w-8 h-8 mb-2 text-white" />
+              <Clock className="w-8 h-8 mb-2 text-primary" />
               <CardTitle className="text-lg">Self-destructing messages</CardTitle>
             </CardHeader>
             <CardContent>
@@ -74,9 +75,9 @@ export default function HomePage() {
             </CardContent>
           </Card>
 
-          <Card className="bg-card border-border transition-all duration-300 hover:shadow-lg hover:scale-90hover:border-2 hover:border-red-500 dark:hover:border-red-400">
+          <Card className="bg-card border-border transition-shadow hover:shadow-md">
             <CardHeader>
-              <Eye className="w-8 h-8 mb-2 text-white" />
+              <Eye className="w-8 h-8 mb-2 text-primary" />
               <CardTitle className="text-lg">Zero-knowledge architecture</CardTitle>
             </CardHeader>
             <CardContent>
@@ -86,9 +87,9 @@ export default function HomePage() {
             </CardContent>
           </Card>
 
-          <Card className="bg-card border-border transition-all duration-300 hover:shadow-lg hover:scale-90hover:border-2 hover:border-red-500 dark:hover:border-red-400">
+          <Card className="bg-card border-border transition-shadow hover:shadow-md">
             <CardHeader>
-              <Database className="w-8 h-8 mb-2 text-white" />
+              <Database className="w-8 h-8 mb-2 text-primary" />
               <CardTitle className="text-lg">No data retention</CardTitle>
             </CardHeader>
             <CardContent>
@@ -98,9 +99,9 @@ export default function HomePage() {
             </CardContent>
           </Card>
 
-          <Card className="bg-card border-border transition-all duration-300 hover:shadow-lg hover:scale-90hover:border-2 hover:border-red-500 dark:hover:border-red-400">
+          <Card className="bg-card border-border transition-shadow hover:shadow-md">
             <CardHeader>
-              <Zap className="w-8 h-8 mb-2 text-white" />
+              <Zap className="w-8 h-8 mb-2 text-primary" />
               <CardTitle className="text-lg">Instant sharing</CardTitle>
             </CardHeader>
             <CardContent>
@@ -110,9 +111,9 @@ export default function HomePage() {
             </CardContent>
           </Card>
 
-          <Card className="bg-card border-border transition-all duration-300 hover:shadow-lg hover:scale-90hover:border-2 hover:border-red-500 dark:hover:border-red-400">
+          <Card className="bg-card border-border transition-shadow hover:shadow-md">
             <CardHeader>
-              <Github className="w-8 h-8 mb-2 text-white" />
+              <Github className="w-8 h-8 mb-2 text-primary" />
               <CardTitle className="text-lg">Open source</CardTitle>
             </CardHeader>
             <CardContent>
@@ -123,7 +124,7 @@ export default function HomePage() {
           </Card>
         </div>
         </div>
-      </div>
+      </section>
     </div>
   )
 }

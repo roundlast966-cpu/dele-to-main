@@ -98,24 +98,23 @@ const comparisonData = [
 
 export default function PasswordPusherComparison() {
   return (
-    <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-8">
-        <div className="mb-6">
-          <Link href="/">
-            <Button variant="ghost">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </Button>
-          </Link>
-        </div>
+    <div>
+      <div className="mb-6">
+        <Link href="/">
+          <Button variant="ghost">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Home
+          </Button>
+        </Link>
+      </div>
 
-        <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h1 className="text-4xl font-bold text-foreground mb-4">
               DELE.TO - Alternative to PasswordPusher
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Comparing client-side vs server-side encryption approaches. Both are popular,
               but they handle your data very differently.
             </p>
@@ -143,7 +142,7 @@ export default function PasswordPusherComparison() {
             <Card>
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 rounded-full" style={{ backgroundColor: '#D2461E' }}>
+                  <div className="p-2 rounded-full bg-primary">
                     <Flame className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -155,16 +154,16 @@ export default function PasswordPusherComparison() {
               <CardContent>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
-                    <Badge style={{ backgroundColor: '#D2461E' }} className="text-white">Zero-Knowledge</Badge>
+                    <Badge>Zero-Knowledge</Badge>
                     <Badge variant="outline">Client-Side</Badge>
                   </div>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-muted-foreground">
                     Your data is encrypted in your browser using AES-256-GCM before it ever leaves your device.
                     The server never sees your plaintext data or encryption keys.
                   </p>
                   <div className="pt-2">
                     <Link href="/create">
-                      <Button style={{ backgroundColor: '#D2461E' }} className="text-white hover:opacity-90">
+                      <Button>
                         Try DELE.TO
                       </Button>
                     </Link>
@@ -191,7 +190,7 @@ export default function PasswordPusherComparison() {
                     <Badge className="bg-purple-600">Feature Rich</Badge>
                     <Badge variant="outline">API Access</Badge>
                   </div>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-muted-foreground">
                     A mature solution with extensive features including file sharing, URL sharing, and API access.
                     Encrypts data on the server after receiving it.
                   </p>
@@ -228,7 +227,7 @@ export default function PasswordPusherComparison() {
                   </thead>
                   <tbody>
                     {comparisonData.map((item, index) => (
-                      <tr key={index} className="border-b hover:bg-gray-50 dark:hover:bg-gray-800">
+                      <tr key={index} className="border-b hover:bg-muted/40">
                         <td className="py-3 px-4 font-medium">{item.feature}</td>
                         <td className="py-3 px-4 text-center">
                           {item.deleto === true ? (
@@ -250,7 +249,7 @@ export default function PasswordPusherComparison() {
                             <span className="text-sm text-yellow-600">{item.passwordpusher}</span>
                           )}
                         </td>
-                        <td className="py-3 px-4 text-sm text-gray-600">{item.details}</td>
+                        <td className="py-3 px-4 text-sm text-muted-foreground">{item.details}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -270,27 +269,27 @@ export default function PasswordPusherComparison() {
             <CardContent>
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-4">
-                  <h4 className="font-semibold text-lg" style={{ color: '#D2461E' }}>DELE.TO: Zero-Knowledge</h4>
+                  <h4 className="font-semibold text-lg text-primary">DELE.TO: Zero-Knowledge</h4>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full text-white text-xs flex items-center justify-center font-bold" style={{ backgroundColor: '#D2461E' }}>1</div>
+                      <div className="w-6 h-6 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center font-bold">1</div>
                       <div>
                         <p className="font-medium">Browser generates AES-256 key</p>
-                        <p className="text-sm text-gray-600">Cryptographically secure key generation</p>
+                        <p className="text-sm text-muted-foreground">Cryptographically secure key generation</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full text-white text-xs flex items-center justify-center font-bold" style={{ backgroundColor: '#D2461E' }}>2</div>
+                      <div className="w-6 h-6 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center font-bold">2</div>
                       <div>
                         <p className="font-medium">Data encrypted client-side</p>
-                        <p className="text-sm text-gray-600">Your data never leaves your device unencrypted</p>
+                        <p className="text-sm text-muted-foreground">Your data never leaves your device unencrypted</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full text-white text-xs flex items-center justify-center font-bold" style={{ backgroundColor: '#D2461E' }}>3</div>
+                      <div className="w-6 h-6 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center font-bold">3</div>
                       <div>
                         <p className="font-medium">Key stays in URL fragment</p>
-                        <p className="text-sm text-gray-600">Server never receives the encryption key</p>
+                        <p className="text-sm text-muted-foreground">Server never receives the encryption key</p>
                       </div>
                     </div>
                   </div>
@@ -396,13 +395,13 @@ export default function PasswordPusherComparison() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <p className="text-gray-600">
+                <p className="text-muted-foreground">
                   The choice between DELE.TO and PasswordPusher comes down to your security requirements and feature needs:
                 </p>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="p-4 rounded-lg" style={{ backgroundColor: '#FDF2F2', borderColor: '#D2461E', borderWidth: '1px' }}>
-                    <h4 className="font-semibold mb-2" style={{ color: '#8B1A00' }}>For Maximum Security</h4>
-                    <p className="text-sm" style={{ color: '#B91C1C' }}>
+                  <div className="p-4 rounded-lg bg-primary/10 border border-primary/20">
+                    <h4 className="font-semibold mb-2 text-primary">For Maximum Security</h4>
+                    <p className="text-sm text-muted-foreground">
                       Choose DELE.TO if privacy is your top priority. Zero-knowledge architecture with file sharing coming soon.
                     </p>
                   </div>
@@ -419,13 +418,12 @@ export default function PasswordPusherComparison() {
 
           <div className="text-center mt-12">
             <Link href="/create">
-              <Button size="lg" style={{ backgroundColor: '#D2461E' }} className="text-white hover:opacity-90">
+              <Button size="lg">
                 Experience Zero-Knowledge Security
               </Button>
             </Link>
           </div>
         </div>
       </div>
-    </div>
   )
 }

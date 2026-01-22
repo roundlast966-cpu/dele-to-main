@@ -200,9 +200,9 @@ export default function ViewPage({ params }: { params: { id: string } }) {
 
   if (!isClient) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="flex items-center justify-center py-16">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
           <p>Loading secure decryption...</p>
         </div>
       </div>
@@ -211,13 +211,13 @@ export default function ViewPage({ params }: { params: { id: string } }) {
 
   if (showContent && share) {
     return (
-      <div className="min-h-screen p-4">
-        <div className="container mx-auto max-w-2xl py-16">
+      <div className="py-10">
+        <div className="max-w-2xl mx-auto py-10">
           <Card>
             <CardHeader>
               <div className="flex justify-center mb-4">
-                <div className="p-3 bg-green-100 rounded-full">
-                  <Shield className="w-8 h-8 text-green-600" />
+                <div className="p-3 bg-primary/10 rounded-full">
+                  <Shield className="w-8 h-8 text-primary" />
                 </div>
               </div>
               <CardTitle className="text-center">{share.title || "Secure Content"}</CardTitle>
@@ -228,12 +228,12 @@ export default function ViewPage({ params }: { params: { id: string } }) {
             <CardContent className="space-y-6">
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-orange-500" />
-                  <span className="text-orange-600 dark:text-orange-400 font-medium">{formatTimeRemaining(share.expiresAt)}</span>
+                  <Clock className="w-4 h-4 text-primary" />
+                  <span className="text-primary font-medium">{formatTimeRemaining(share.expiresAt)}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Eye className="w-4 h-4 text-blue-500" />
-                  <span className="text-blue-600 dark:text-blue-400 font-medium">
+                  <Eye className="w-4 h-4 text-primary" />
+                  <span className="text-primary font-medium">
                     {share.currentViews}/{share.maxViews} views
                   </span>
                 </div>
@@ -241,14 +241,14 @@ export default function ViewPage({ params }: { params: { id: string } }) {
 
               <div>
                 <Label>Decrypted Content</Label>
-                <div className="mt-2 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border dark:border-gray-700">
+                <div className="mt-2 p-4 bg-muted/50 rounded-lg border">
                   <div className="flex justify-between items-start gap-4">
-                    <pre className="whitespace-pre-wrap font-mono text-sm flex-1 break-all text-gray-900 dark:text-gray-100">{decryptedContent}</pre>
+                    <pre className="whitespace-pre-wrap font-mono text-sm flex-1 break-all text-foreground">{decryptedContent}</pre>
                     <Button onClick={copyToClipboard} variant="outline" size="sm">
                       <Copy className="w-4 h-4" />
                     </Button>
                   </div>
-                  {copied && <p className="text-sm text-green-600 mt-2">Copied to clipboard!</p>}
+                  {copied && <p className="text-sm text-primary mt-2">Copied to clipboard!</p>}
                 </div>
               </div>
 
@@ -281,13 +281,13 @@ export default function ViewPage({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className="min-h-screen p-4">
-      <div className="container mx-auto max-w-md py-16">
+    <div className="py-10">
+      <div className="max-w-md mx-auto py-10">
         <Card>
           <CardHeader className="text-center">
             <div className="flex justify-center mb-4">
-              <div className="p-3 bg-blue-100 rounded-full">
-                <Shield className="w-8 h-8 text-blue-600" />
+              <div className="p-3 bg-primary/10 rounded-full">
+                <Shield className="w-8 h-8 text-primary" />
               </div>
             </div>
             <CardTitle>Access Secure Content</CardTitle>
@@ -303,15 +303,15 @@ export default function ViewPage({ params }: { params: { id: string } }) {
             <AccessTips />
             
             {metadata && (
-              <div className="mb-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border dark:border-gray-700">
+              <div className="mb-6 p-4 bg-muted/50 rounded-lg border">
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-orange-500" />
-                    <span className="text-orange-600 dark:text-orange-400 font-medium">{formatTimeRemaining(metadata.expiresAt)}</span>
+                    <Clock className="w-4 h-4 text-primary" />
+                    <span className="text-primary font-medium">{formatTimeRemaining(metadata.expiresAt)}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Eye className="w-4 h-4 text-blue-500" />
-                    <span className="text-blue-600 dark:text-blue-400 font-medium">
+                    <Eye className="w-4 h-4 text-primary" />
+                    <span className="text-primary font-medium">
                       {metadata.currentViews}/{metadata.maxViews} views
                     </span>
                   </div>

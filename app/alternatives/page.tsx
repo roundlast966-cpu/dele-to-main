@@ -108,24 +108,23 @@ const comparisonMatrix = [
 
 export default function AlternativesPage() {
   return (
-    <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-8">
-        <div className="mb-6">
-          <Link href="/">
-            <Button variant="ghost">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </Button>
-          </Link>
-        </div>
+    <div>
+      <div className="mb-6">
+        <Link href="/">
+          <Button variant="ghost">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Home
+          </Button>
+        </Link>
+      </div>
 
-        <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h1 className="text-4xl font-bold text-foreground mb-4">
               DELE.TO - Alternative to Popular Password Sharing Tools
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Compare the top 5 secure password sharing tools. Find the perfect solution
               for your security needs, team size, and technical requirements.
             </p>
@@ -146,7 +145,7 @@ export default function AlternativesPage() {
                         <div className="flex items-center gap-2 mb-1">
                           <CardTitle className="text-lg">{alt.name}</CardTitle>
                           {alt.name === "DELE.TO" && (
-                            <Badge style={{ backgroundColor: '#D2461E' }} className="text-white text-xs">
+                            <Badge className="text-xs">
                               Recommended
                             </Badge>
                           )}
@@ -185,17 +184,17 @@ export default function AlternativesPage() {
                         </div>
                         <div className="flex justify-between items-center">
                           <span className="text-xs font-medium">Price:</span>
-                          <span className="text-xs text-gray-600 dark:text-gray-400">{alt.pricing}</span>
+                          <span className="text-xs text-muted-foreground">{alt.pricing}</span>
                         </div>
                       </div>
 
-                      <div className="text-xs text-gray-600 dark:text-gray-400 border-t pt-2">
+                      <div className="text-xs text-muted-foreground border-t pt-2">
                         <strong>Best for:</strong> {alt.bestFor}
                       </div>
 
                       {alt.name === "DELE.TO" && (
                         <Link href="/create">
-                          <Button size="sm" style={{ backgroundColor: '#D2461E' }} className="w-full text-white hover:opacity-90">
+                          <Button size="sm" className="w-full">
                             Try Now
                           </Button>
                         </Link>
@@ -209,7 +208,7 @@ export default function AlternativesPage() {
 
           {/* Additional Alternatives */}
           <div className="mb-12">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+            <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
               Additional Alternatives
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -260,11 +259,11 @@ export default function AlternativesPage() {
                           </div>
                           <div className="flex justify-between items-center">
                             <span className="text-xs font-medium">Price:</span>
-                            <span className="text-xs text-gray-600 dark:text-gray-400">{alt.pricing}</span>
+                            <span className="text-xs text-muted-foreground">{alt.pricing}</span>
                           </div>
                         </div>
 
-                        <div className="text-xs text-gray-600 dark:text-gray-400 border-t pt-2">
+                        <div className="text-xs text-muted-foreground border-t pt-2">
                           <strong>Best for:</strong> {alt.bestFor}
                         </div>
                       </div>
@@ -298,7 +297,7 @@ export default function AlternativesPage() {
                   </thead>
                   <tbody>
                     {comparisonMatrix.map((row, index) => (
-                      <tr key={index} className="border-b hover:bg-gray-50 dark:hover:bg-gray-800">
+                      <tr key={index} className="border-b hover:bg-muted/40">
                         <td className="py-2 px-2 font-medium">{row.feature}</td>
                         <td className="py-2 px-2 text-center">
                           {row.deleto === true ? (
@@ -347,166 +346,37 @@ export default function AlternativesPage() {
             </CardContent>
           </Card>
 
-          {/* Use Case Recommendations */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-green-600">🏢 For Businesses</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  <div>
-                    <p className="font-medium">Best Choice: DELE.TO</p>
-                    <p className="text-sm text-gray-600">Zero-knowledge security with professional UI</p>
-                  </div>
-                  <div>
-                    <p className="font-medium">Alternative: OneTimeSecret</p>
-                    <p className="text-sm text-gray-600">If you need API access and enterprise features</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-blue-600">👨‍💻 For Developers</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  <div>
-                    <p className="font-medium">Best Choice: PrivateBin</p>
-                    <p className="text-sm text-gray-600">Zero-knowledge with code sharing features</p>
-                  </div>
-                  <div>
-                    <p className="font-medium">Alternative: DELE.TO</p>
-                    <p className="text-sm text-gray-600">For maximum security and modern interface</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-purple-600">👤 For Personal Use</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  <div>
-                    <p className="font-medium">Best Choice: DELE.TO</p>
-                    <p className="text-sm text-gray-600">
-                      Perfect balance of security and usability
-                    </p>
-                  </div>
-                  <div>
-                    <p className="font-medium">Alternative: PrivateBin</p>
-                    <p className="text-sm text-gray-600">For zero-knowledge sharing with file support</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Security Comparison */}
-          <Card className="mb-12">
-            <CardHeader>
-              <CardTitle>Security Model Comparison</CardTitle>
-              <CardDescription>
-                Understanding how each platform handles your sensitive data
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="font-semibold mb-4 text-green-600">Zero-Knowledge (Most Secure)</h4>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="p-1 rounded-full" style={{ backgroundColor: '#D2461E' }}>
-                        <Flame className="w-4 h-4 text-white" />
-                      </div>
-                      <div>
-                        <p className="font-medium">DELE.TO</p>
-                        <p className="text-sm text-gray-600">Client-side AES-256-GCM encryption</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="p-1 bg-blue-600 rounded-full">
-                        <Shield className="w-4 h-4 text-white" />
-                      </div>
-                      <div>
-                        <p className="font-medium">Yopass</p>
-                        <p className="text-sm text-gray-600">Client-side AES encryption</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="p-1 bg-gray-600 rounded-full">
-                        <Code className="w-4 h-4 text-white" />
-                      </div>
-                      <div>
-                        <p className="font-medium">PrivateBin</p>
-                        <p className="text-sm text-gray-600">Zero-knowledge pastebin encryption</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold mb-4 text-yellow-600">Server-Side Encryption</h4>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="p-1 bg-purple-600 rounded-full">
-                        <Lock className="w-4 h-4 text-white" />
-                      </div>
-                      <div>
-                        <p className="font-medium">PasswordPusher</p>
-                        <p className="text-sm text-gray-600">Server receives plaintext, then encrypts</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="p-1 bg-blue-600 rounded-full">
-                        <AlertTriangle className="w-4 h-4 text-white" />
-                      </div>
-                      <div>
-                        <p className="font-medium">OneTimeSecret</p>
-                        <p className="text-sm text-gray-600">Server-side encryption with passphrase</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
           {/* Final Recommendation */}
           <Card>
             <CardHeader>
               <CardTitle>Why Choose DELE.TO?</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid gap-6 md:grid-cols-3">
                 <div className="text-center">
-                  <div className="p-3 rounded-full mx-auto mb-3 w-fit" style={{ backgroundColor: '#D2461E' }}>
+                  <div className="p-3 rounded-full mx-auto mb-3 w-fit bg-primary">
                     <Shield className="w-8 h-8 text-white" />
                   </div>
                   <h4 className="font-semibold mb-2">Maximum Security</h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-muted-foreground">
                     True zero-knowledge architecture with client-side AES-256-GCM encryption
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="p-3 rounded-full mx-auto mb-3 w-fit" style={{ backgroundColor: '#D2461E' }}>
+                  <div className="p-3 rounded-full mx-auto mb-3 w-fit bg-primary">
                     <Zap className="w-8 h-8 text-white" />
                   </div>
                   <h4 className="font-semibold mb-2">Modern Experience</h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-muted-foreground">
                     Built with Next.js 14, featuring a polished, mobile-first interface
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="p-3 rounded-full mx-auto mb-3 w-fit" style={{ backgroundColor: '#D2461E' }}>
+                  <div className="p-3 rounded-full mx-auto mb-3 w-fit bg-primary">
                     <Lock className="w-8 h-8 text-white" />
                   </div>
                   <h4 className="font-semibold mb-2">Extra Protection</h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-muted-foreground">
                     Optional password protection and built-in security guidance
                   </p>
                 </div>
@@ -516,13 +386,10 @@ export default function AlternativesPage() {
 
           <div className="text-center mt-12">
             <Link href="/create">
-              <Button size="lg" style={{ backgroundColor: '#D2461E' }} className="text-white hover:opacity-90">
-                Try DELE.TO - The Secure Choice
-              </Button>
+              <Button size="lg">Try DELE.TO - The Secure Choice</Button>
             </Link>
           </div>
         </div>
       </div>
-    </div>
   )
 }

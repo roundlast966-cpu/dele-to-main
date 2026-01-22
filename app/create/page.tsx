@@ -22,7 +22,6 @@ import { SecurityTips } from "@/components/security-tips"
 import { InlineTip } from "@/components/inline-tip"
 import { PasswordInput } from "@/components/password-input"
 import { QrCodeModal } from "@/components/qr-code-modal"
-import { Header } from "@/components/header"
 
 interface Recipient {
   id: string
@@ -232,8 +231,7 @@ export default function CreatePage() {
 
   if (generatedLinks.length > 0) {
     return (
-      <div className="min-h-screen p-4">
-        <Header />
+      <div className="py-10">
         <div className="container mx-auto max-w-4xl py-16">
           <Card>
             <CardHeader className="text-center">
@@ -358,14 +356,14 @@ export default function CreatePage() {
                     })
                     setRecipients([])
                   }}
-                  className="flex-1 bg-red-600 hover:bg-red-700 text-white"
+                  className="flex-1"
                 >
                   Create Another
                 </Button>
                 <Link href="/" className="flex-1">
                   <Button
                     variant="outline"
-                    className="w-full border-gray-600 text-gray-300 hover:bg-gray-800"
+                    className="w-full"
                   >
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Home
@@ -397,12 +395,11 @@ export default function CreatePage() {
   }
 
   return (
-    <div className="min-h-screen p-4">
-      <Header />
+    <div className="py-10">
       <div className="container mx-auto max-w-2xl py-8">
         <div className="mb-6">
           <Link href="/">
-            <Button variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800">
+            <Button variant="outline">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
             </Button>
@@ -761,7 +758,7 @@ export default function CreatePage() {
                 </CollapsibleContent>
               </Collapsible>
 
-              <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-white" disabled={isLoading}>
+              <Button type="submit" className="w-full" disabled={isLoading}>
                 {isLoading ? "Creating Secure Links..." : formData.multiRecipient ? "Create Secure Links" : "Create Secure Link"}
               </Button>
             </form>

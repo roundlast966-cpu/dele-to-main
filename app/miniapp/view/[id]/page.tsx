@@ -51,10 +51,10 @@ export default function MiniAppViewPage({ params }: { params: { id: string } }) 
               </Alert>
               
               <div className="text-center">
-                <p className="text-gray-600 mb-4">
-                  Share ID: <code className="bg-gray-100 px-2 py-1 rounded">{params.id}</code>
+                <p className="text-muted-foreground mb-4">
+                  Share ID: <code className="bg-muted px-2 py-1 rounded">{params.id}</code>
                 </p>
-                <p className="text-gray-600">
+                <p className="text-muted-foreground">
                   This is a simplified version for the Farcaster MiniApp. 
                   Visit the full site for complete functionality.
                 </p>

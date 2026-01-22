@@ -41,7 +41,7 @@ export default function MiniAppCreatePage() {
               </Alert>
               
               <div className="text-center">
-                <p className="text-gray-600">
+                <p className="text-muted-foreground">
                   This is a simplified version for the Farcaster MiniApp. 
                   Visit the full site for advanced features.
                 </p>

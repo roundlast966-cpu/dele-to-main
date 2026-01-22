@@ -92,24 +92,23 @@ const comparisonData = [
 
 export default function OneTimeSecretComparison() {
   return (
-    <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-8">
-        <div className="mb-6">
-          <Link href="/">
-            <Button variant="ghost">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </Button>
-          </Link>
-        </div>
+    <div>
+      <div className="mb-6">
+        <Link href="/">
+          <Button variant="ghost">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Home
+          </Button>
+        </Link>
+      </div>
 
-        <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h1 className="text-4xl font-bold text-foreground mb-4">
               DELE.TO - Alternative to OneTimeSecret
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Comparing client-side vs server-side encryption approaches. Both are popular,
               but they handle your data very differently.
             </p>
@@ -137,7 +136,7 @@ export default function OneTimeSecretComparison() {
             <Card>
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 rounded-full" style={{ backgroundColor: '#D2461E' }}>
+                  <div className="p-2 rounded-full bg-primary">
                     <Flame className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -149,16 +148,16 @@ export default function OneTimeSecretComparison() {
               <CardContent>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
-                    <Badge style={{ backgroundColor: '#D2461E' }} className="text-white">Zero-Knowledge</Badge>
+                    <Badge>Zero-Knowledge</Badge>
                     <Badge variant="outline">Client-Side</Badge>
                   </div>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-muted-foreground">
                     Your data is encrypted in your browser using AES-256-GCM before it ever leaves your device.
                     The server never sees your plaintext data or encryption keys.
                   </p>
                   <div className="pt-2">
                     <Link href="/create">
-                      <Button style={{ backgroundColor: '#D2461E' }} className="text-white hover:opacity-90">
+                      <Button>
                         Try DELE.TO
                       </Button>
                     </Link>
@@ -222,7 +221,7 @@ export default function OneTimeSecretComparison() {
                   </thead>
                   <tbody>
                     {comparisonData.map((item, index) => (
-                      <tr key={index} className="border-b hover:bg-gray-50 dark:hover:bg-gray-800">
+                      <tr key={index} className="border-b hover:bg-muted/40">
                         <td className="py-3 px-4 font-medium">{item.feature}</td>
                         <td className="py-3 px-4 text-center">
                           {item.deleto === true ? (
@@ -244,7 +243,7 @@ export default function OneTimeSecretComparison() {
                             <span className="text-sm text-yellow-600">{item.onetimesecret}</span>
                           )}
                         </td>
-                        <td className="py-3 px-4 text-sm text-gray-600">{item.details}</td>
+                        <td className="py-3 px-4 text-sm text-muted-foreground">{item.details}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -391,13 +390,13 @@ export default function OneTimeSecretComparison() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <p className="text-gray-600">
+                <p className="text-muted-foreground">
                   The choice between DELE.TO and OneTimeSecret comes down to your security requirements and feature needs:
                 </p>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="p-4 rounded-lg" style={{ backgroundColor: '#FDF2F2', borderColor: '#D2461E', borderWidth: '1px' }}>
-                    <h4 className="font-semibold mb-2" style={{ color: '#8B1A00' }}>For Maximum Security</h4>
-                    <p className="text-sm" style={{ color: '#B91C1C' }}>
+                  <div className="p-4 rounded-lg bg-primary/10 border border-primary/20">
+                    <h4 className="font-semibold mb-2 text-primary">For Maximum Security</h4>
+                    <p className="text-sm text-muted-foreground">
                       Choose DELE.TO if privacy is your top priority. Zero-knowledge architecture means your data is never exposed to the server.
                     </p>
                   </div>
@@ -414,13 +413,12 @@ export default function OneTimeSecretComparison() {
 
           <div className="text-center mt-12">
             <Link href="/create">
-              <Button size="lg" style={{ backgroundColor: '#D2461E' }} className="text-white hover:opacity-90">
+              <Button size="lg">
                 Experience Zero-Knowledge Security
               </Button>
             </Link>
           </div>
         </div>
       </div>
-    </div>
   )
 }
